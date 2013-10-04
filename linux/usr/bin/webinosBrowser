@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ $# -eq 0 ]; then
+	/usr/local/share/webinos/bin/wrt/webinosBrowser 
+else
+	/usr/local/share/webinos/bin/wrt/webinosBrowser --webinos-side-load $@
+fi
+

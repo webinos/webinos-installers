@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="webinos" default="gen-webinos" basedir="../..">
+
+	<target name="gen-webinos">
+
+		<!-- PZP - Copy only files required to run webinos -->
+		<copy toDir="./webinos-installers/linux/usr/local/share/webinos/webinos-pzp">
+			<fileset dir="${basedir}/webinos-pzp" 
+			includes="
+				webinos_pzp.js,
+				config.json,
+				lib/,
+				node_modules/,
+				web_root/,
+				wrt/"
+			excludes="	
+				**/build/,
+				**/deps/,
+				**/.gitignore" />
+		</copy>
+
+		<!-- PZH - Copy only files required to run webinos -->
+		<copy toDir="./webinos-installers/linux/usr/local/share/webinos/webinos-pzh">
+			<fileset dir="${basedir}/webinos-pzh" 
+			includes="
+				webinos_pzh.js,
+				config.json,
+				webconfig.json,
+				webconfig-empty.json,
+				lib/,
+				node_modules/,
+				public/,
+				web-lib/"
+			excludes="	
+				**/build/,
+				**/deps/,
+				**/.gitignore" />
+		</copy>
+
+	</target>
+
+</project>
