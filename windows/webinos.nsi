@@ -183,6 +183,15 @@ SectionIn RO
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-iot\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-iot\test\*.*"
 
+  ; webinos-api-geolocation
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-geolocation\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-geolocation\test\*.*"
+  
+  ; webinos-api-file
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-file\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-file\test\*.*"
+  
+  /*
   ; webinos-api-deviceStatus
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-deviceStatus\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-deviceStatus\test\*.*"
@@ -211,10 +220,6 @@ SectionIn RO
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-app2app\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-app2app\test\*.*"
   
-  ; webinos-api-file
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-file\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-file\test\*.*"
-  
   ; webinos-api-webNotification
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-webNotification\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-webNotification\test\*.*"
@@ -231,10 +236,6 @@ SectionIn RO
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-deviceOrientation\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-deviceOrientation\test\*.*"
   
-  ; webinos-api-geolocation
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-geolocation\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-geolocation\test\*.*"
-  
   ; webinos-api-tv
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-tv\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-tv\test\*.*"
@@ -242,8 +243,10 @@ SectionIn RO
   ; webinos-api-payment
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-payment\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-payment\test\*.*"
-    	
+    */
+	
   ; These are required in the node_modules folder so that certificate_manager can find them.	
+  SetOutPath "$INSTDIR\webinos-pzp"
   File "${RedistPath}\Openssl\libeay32.dll"
   File "${RedistPath}\Openssl\ssleay32.dll"
 
