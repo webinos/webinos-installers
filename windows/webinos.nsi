@@ -161,6 +161,9 @@ SectionIn RO
   SetOutPath "$INSTDIR\webinos-pzp"
   File /r /x zombie /x jasmine-node /x *.ipch /x .gitignore /x android /x test /x pom.xml /x wscript /x *.gyp /x obj /x *.sln /x *.vcxproj* /x *.sdf /x *.suo /x *.cpp /x *.h /x *.c /x *.cc /x *.exp /x *.ilk /x *.pdb /x *.lib /x .git /x platform /x examples "${SRCROOT}\webinos-pzp\*.*"
 
+  SetOutPath "$INSTDIR\webinos-pzp\web_root\test"
+  File /r "${SRCROOT}\webinos-pzp\web_root\test\*.*"
+
   ;
   ; PZH apis.
   ;
