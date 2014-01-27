@@ -24,7 +24,7 @@ SetCompressor lzma
 !define INSTALLER_BANNER "installBanner.bmp"
 
 !define PRODUCT_NAME "webinos"
-!define VERSION "0.9.50-webinos"
+!define VERSION "1.0.0-webinos beta"
 
 ; XP Compatibility
 !ifndef SF_SELECTED
@@ -156,10 +156,10 @@ SectionIn RO
   DetailPrint "Installing Core components"
   
   SetOutPath "$INSTDIR\webinos-pzh"
-  File /r /x zombie /x *.ipch /x .gitignore /x android /x test /x pom.xml /x wscript /x *.gyp /x obj /x *.sln /x *.vcxproj* /x *.sdf /x *.suo /x *.cpp /x *.h /x *.c /x *.cc /x *.exp /x *.ilk /x *.pdb /x *.lib /x .git /x platform /x examples "${SRCROOT}\webinos-pzh\*.*"
+  File /r /x zombie /x jasmine-node /x *.ipch /x .gitignore /x android /x test /x pom.xml /x wscript /x *.gyp /x obj /x *.sln /x *.vcxproj* /x *.sdf /x *.suo /x *.cpp /x *.h /x *.c /x *.cc /x *.exp /x *.ilk /x *.pdb /x *.lib /x .git /x platform /x examples "${SRCROOT}\webinos-pzh\*.*"
     
   SetOutPath "$INSTDIR\webinos-pzp"
-  File /r /x zombie /x *.ipch /x .gitignore /x android /x test /x pom.xml /x wscript /x *.gyp /x obj /x *.sln /x *.vcxproj* /x *.sdf /x *.suo /x *.cpp /x *.h /x *.c /x *.cc /x *.exp /x *.ilk /x *.pdb /x *.lib /x .git /x platform /x examples "${SRCROOT}\webinos-pzp\*.*"
+  File /r /x zombie /x jasmine-node /x *.ipch /x .gitignore /x android /x test /x pom.xml /x wscript /x *.gyp /x obj /x *.sln /x *.vcxproj* /x *.sdf /x *.suo /x *.cpp /x *.h /x *.c /x *.cc /x *.exp /x *.ilk /x *.pdb /x *.lib /x .git /x platform /x examples "${SRCROOT}\webinos-pzp\*.*"
 
   ;
   ; PZH apis.
@@ -175,76 +175,80 @@ SectionIn RO
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-utilities\node_modules\webinos-api-test\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-utilities\node_modules\webinos-api-test\test\*.*"
 
+  ; webinos-api-app2app
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-app2app\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-app2app\test\*.*"
+  
   ; webinos-api-applauncher
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-applauncher\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-applauncher\test\*.*"
-  
-  ; webinos-api-iot
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-iot\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-iot\test\*.*"
-
-  ; webinos-api-geolocation
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-geolocation\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-geolocation\test\*.*"
-  
-  ; webinos-api-file
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-file\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-file\test\*.*"
-  
-  /*
-  ; webinos-api-deviceStatus
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-deviceStatus\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-deviceStatus\test\*.*"
-  
-  ; webinos-api-mediaContent
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-mediaContent\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-mediaContent\test\*.*"
-  
-  ; webinos-api-media
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-media\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-media\test\*.*"
   
   ; webinos-api-contacts
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-contacts\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-contacts\test\*.*"
   
-  ; webinos-api-vehicle
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-vehicle\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-vehicle\test\*.*"
-  
-  ; webinos-api-policy
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-policy\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-policy\test\*.*"
-  
-  ; webinos-api-app2app
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-app2app\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-app2app\test\*.*"
-  
-  ; webinos-api-webNotification
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-webNotification\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-webNotification\test\*.*"
-  
   ; webinos-api-deviceDiscovery
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-deviceDiscovery\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-deviceDiscovery\test\*.*"
-  
-  ; webinos-api-nfc
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-nfc\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-nfc\test\*.*"
   
   ; webinos-api-deviceOrientation
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-deviceOrientation\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-deviceOrientation\test\*.*"
   
-  ; webinos-api-tv
-  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-tv\test"
-  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-tv\test\*.*"
+  ; webinos-api-deviceStatus
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-deviceStatus\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-deviceStatus\test\*.*"
+  
+  ; webinos-api-events
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-events\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-events\test\*.*"
+  
+  ; webinos-api-file
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-file\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-file\test\*.*"
+  
+  ; webinos-api-geolocation
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-geolocation\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-geolocation\test\*.*"
+  
+  ; webinos-api-iot
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-iot\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-iot\test\*.*"
+
+  ; webinos-api-mediaContent
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-mediaContent\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-mediaContent\test\*.*"
+  
+  ; webinos-api-mediaplay
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-mediaplay\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-mediaplay\test\*.*"
+  
+  ; webinos-api-nfc
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-nfc\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-nfc\test\*.*"
   
   ; webinos-api-payment
   SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-payment\test"
   File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-payment\test\*.*"
-    */
 	
+  ; webinos-api-policy
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-policy\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-policy\test\*.*"
+  
+  ; webinos-api-tv
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-tv\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-tv\test\*.*"
+  
+  /*
+  ; webinos-api-vehicle
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-vehicle\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-vehicle\test\*.*"
+  
+  ; webinos-api-webNotification
+  SetOutPath "$INSTDIR\webinos-pzp\node_modules\webinos-api-webNotification\test"
+  File /r "${SRCROOT}\webinos-pzp\node_modules\webinos-api-webNotification\test\*.*"
+  */
+  
   ; These are required in the node_modules folder so that certificate_manager can find them.	
   SetOutPath "$INSTDIR\webinos-pzp"
   File "${RedistPath}\Openssl\libeay32.dll"
