@@ -9,6 +9,7 @@
 			includes="
 				webinos_pzp.js,
 				config.json,
+                                package.json,
 				lib/,
 				node_modules/,
 				web_root/,
@@ -25,6 +26,7 @@
 			includes="
 				webinos_pzh.js,
 				config.json,
+                                package.json,
 				webconfig.json,
 				webconfig-empty.json,
 				lib/,
@@ -35,6 +37,10 @@
 				**/build/,
 				**/deps/,
 				**/.gitignore" />
+		</copy>
+
+		<copy toDir="./webinos-installers/linux/usr/local/share/webinos/webinos-pzh">
+			<fileset dir="${basedir}/webinos-pzh" />
 		</copy>
 
 	</target>

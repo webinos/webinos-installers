@@ -18,22 +18,29 @@ do
 		chmod og+w ${user}/.webinos
 		mkdir ${user}/.webinos/wrt
 		chmod og+w ${user}/.webinos/wrt
+                mkdir ${user}/.webinos/wrt/widgetStore
+                chmod og+w ${user}/.webinos/wrt/widgetStore
+                cp -R /usr/local/share/webinos/bin/preinstalled/* ${user}/.webinos/wrt/widgetStore
 	fi	
 	echo "{
-\"nodePath\": \"/usr/local/share/Webinos-Platform/bin\",
-\"workingDirectoryPath\": \"/usr/local/share/Webinos-Platform\",
+\"nodePath\": \"/usr/local/share/webinos/bin\",
+\"workingDirectoryPath\": \"/usr/local/share/webinos/webinos-pzp\",
 \"nodeArgs\": \"webinos_pzp.js --widgetServer\",
 \"instance\": 0
 }" >> ${user}/.webinos/wrt/webinos_pzp.json 
-	echo "[Desktop Entry]
+
+# disable daemon for time being as there is currently no UI for it.
+if false; then
+echo "[Desktop Entry]
 Name=Webinos PZP
 Comment=Startup for the webinos PZP.
-Exec=/usr/local/share/Webinos-Platform/bin/wrt/webinosDaemon
+Exec=/usr/local/share/webinos/bin/wrt/webinosDaemon
 Terminal=false
 Type=Application
 StartupNotify=true
 Icon=utilities-system-monitor
 Categories=GNOME;System;
 X-GNOME-Autostart-enabled=true" >> ${user}/.config/autostart/webinos-PZP.desktop
+fi
 done
 
