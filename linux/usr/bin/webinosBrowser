@@ -1,8 +1,8 @@
 #!/bin/sh
 
 if [ $# -eq 0 ]; then
-	/usr/local/share/webinos/bin/wrt/webinosBrowser 
+	/usr/local/share/webinos/bin/wrt/webinosBrowser --disable-setuid-sandbox
 else
-	/usr/local/share/webinos/bin/wrt/webinosBrowser --webinos-side-load $@
+	/usr/local/share/webinos/bin/wrt/webinosBrowser --disable-setuid-sandbox --webinos-side-load $@
 fi
 

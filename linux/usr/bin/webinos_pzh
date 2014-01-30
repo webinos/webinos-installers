@@ -1,3 +1,3 @@
 #!/bin/sh
 
-/usr/local/share/webinos/bin/node /usr/local/share/webinos/webinos-pzh/webinos_pzh.js $@
+sudo /usr/local/share/webinos/bin/node /usr/local/share/webinos/webinos-pzh/webinos_pzh.js $@
